@@ -1,0 +1,44 @@
+.portfolio-details {
+  margin-top: 1rem;
+  h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 31px;
+    color: #0675eb;
+    // margin-bottom: 20px;/
+  }
+  .portfolio-details__heading {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 30px;
+    button {
+      background-color: #0675eb;
+      padding: 12px 15px;
+      border-radius: 50%;
+      outline: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+  .portfolio-details__hero {
+    margin: 0 -32px;
+    img {
+      height: 333px;
+      width: 100%;
+    }
+  }
+  .portfolio-details__images--container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    img {
+      height: 181px;
+    }
+  }
+}
