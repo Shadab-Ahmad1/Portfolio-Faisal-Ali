@@ -1,2 +1,25 @@
-<h2>Project Details</h2>
-<p>Project ID: {{ id }}</p>
+<div class="portfolio-details">
+  <div class="portfolio-details__heading">
+    <button (click)="goback()">
+      <img src="assets/img/chevron.svg" alt="icon" />
+    </button>
+    <h1>Portfolio</h1>
+  </div>
+  <div class="portfolio-details__hero">
+    <img src="assets/img/portfolio/port5.jpg" alt="portfolio" />
+  </div>
+  <div class="portfolio-details__images">
+    <div class="portfolio-details__images--container">
+      <img
+        [src]="'assets/img/' + image.detailPathImages"
+        *ngFor="let image of detailImages"
+        alt="portfolio image"
+      />
+    </div>
+    <!-- <div class="portfolio-details__images--container">
+        <img src="assets/img/portfolio/joxi.png" alt="portfolio image" />
+        <img src="assets/img/portfolio/joxi.png" alt="portfolio image" />
+        <img src="assets/img/portfolio/joxi.png" alt="portfolio image" />
+      </div> -->
+  </div>
+</div>
