@@ -27,8 +27,7 @@ export class PortfolioDetailComponent implements OnInit {
   public id: number | undefined;
   public currentImageIndex = 0;
   categoryRanges:any = {
-    'Category1': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11, 12, 13, 14, 15, 16, 17, 18, 19, 20,21,22,23,24,25],
-    'Category2': [26, 27,28,29,30,31,32,33,34,35,36]
+    'Category1': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11, 12, 13, 14, 15, 16, 17, 18, 19, 20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35]
   };
   
   constructor(
@@ -76,7 +75,6 @@ export class PortfolioDetailComponent implements OnInit {
     var srcAttr = target.attributes.src;
     this.imgSrc = srcAttr.nodeValue;
   }
-
   public getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -90,16 +88,48 @@ export class PortfolioDetailComponent implements OnInit {
   public  goback(): void {
     this.Router.navigate(['graphic-designing']);
   }
-  public  gobacktoUi(): void {
-    this.Router.navigate(['UI/UX']);
+  public gobacktoUi(): void {
+    const selectedItemId = this.selected.id; 
+    this.Router.navigate(['UI/UX'], { 
+      queryParams: { selectedItemId },
+      fragment: 'portfolioItem-' + selectedItemId, 
+    });
   }
+  
+  
 
   public previousImage(): void {
     this.currentImageIndex--;
-
-}
-  public nextImage(): void {
+    const previousImageId = this.selected.category[this.currentImageIndex]?.id;
+    if (previousImageId) {
+      this.Router.navigate(['portfolioDetails', previousImageId], {
+        state: {
+          images: this.detailImages,
+          bgImage: this.bgImage,
+          selected: {
+            ...this.selected,
+            index: this.currentImageIndex
+          }
+        },
+      });
+    }
+  }
+  
+public nextImage(): void {
   this.currentImageIndex++;
+  const nextImageId = this.selected.category[this.currentImageIndex]?.id;
+  if (nextImageId) {
+    this.Router.navigate(['portfolioDetails', nextImageId], {
+      state: {
+        images: this.detailImages,
+        bgImage: this.bgImage,
+        selected: {
+          ...this.selected,
+          index: this.currentImageIndex
+        }
+      },
+    });
+  }
 }
   public onClose(){
   this.modalService.dismissAll();

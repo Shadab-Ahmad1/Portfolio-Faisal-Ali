@@ -1,8 +1,8 @@
 <div class="portfolio">
     <div class="navigate-to-portfolio">
-      <button (click)="goback()">
+      <!-- <button (click)="goback()">
         <img src="assets/img/chevron.svg" alt="icon" />
-      </button>
+      </button> -->
         <h1>UI/UX Designing</h1>
     </div>
       <div class="portfolio__nav">
@@ -15,12 +15,6 @@
             {{ category.name }}
           </button>
         </div>
-        <!-- <select class="mobile-view-categories" [(ngModel)]="name" (change)="select(name)">
-          <option *ngFor="let category of categories" [value]="category.name"
-            [selected]="currentCategory.name === category.name">
-            {{ category.name }}
-          </option>
-        </select> -->
       </div>
       <div class="portfolio__gallery" [class.loading]="loading">
         <ng-container *ngIf="currentCategory.categoryHeading === 'Web Images'">
@@ -45,13 +39,13 @@
           class="portfolio__gallery--item"
           *ngFor="let image of currentCategory.images; let i = index"
           [class.loaded]="!loading"
+          [attr.id]="'portfolioItem-' + image.id"
         >
           <div class="gallery-image" (click)="gotoDetails(image , i)">
             <img src="assets/img/{{ image.thumbnailImage }}" alt="{{ image }}" />
             <div class="img-overlay">
               <div class="plus"></div>
               <div class="img-description">
-                <!-- <h3>{{ currentCategory.categoryHeading }}</h3> -->
               </div>
             </div>
           </div>
