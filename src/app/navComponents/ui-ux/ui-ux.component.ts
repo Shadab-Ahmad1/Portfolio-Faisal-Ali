@@ -77,11 +77,9 @@ export class UIUXComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       const selectedItemId = params['selectedItemId']; 
       if (selectedItemId) {
-        const url = `/#/UI/UX`;
-        history.pushState(null, '', url);
-      }
-      if (selectedItemId) {
         const element = this.elementRef.nativeElement.querySelector('#portfolioItem-' + selectedItemId);
+         const url = `/#/UI/UX`;
+         history.pushState(null, '', url);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
