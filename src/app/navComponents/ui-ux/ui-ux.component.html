@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="portfolio__gallery" [class.loading]="loading">
-        <ng-container *ngIf="currentCategory.categoryHeading === 'Web Images'">
+        <ng-container *ngIf="currentCategory.categoryHeading === 'Wireframes'">
           <div
           class="portfolio__gallery--item"
           *ngFor="let image of currentCategory.images; let i = index"
@@ -28,13 +28,12 @@
             <div class="img-overlay">
               <div class="plus"></div>
               <div class="img-description">
-                <!-- <h3>{{ currentCategory.categoryHeading }}</h3> -->
               </div>
             </div>
           </div>
         </div>
         </ng-container>
-        <ng-container *ngIf="currentCategory.categoryHeading === 'Mockups'">
+        <ng-container>
           <div
           class="portfolio__gallery--item"
           *ngFor="let image of currentCategory.images; let i = index"

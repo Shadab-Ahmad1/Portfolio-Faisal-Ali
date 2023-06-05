@@ -54,7 +54,34 @@ export class UIUXComponent implements OnInit {
         { id: 34,thumbnailImage:'portfolio/mockups/Pixelplex-thumbnail.jpg', path: 'portfolio/mockups/Pixel-plex.jpg' },
       ],
       categoryHeading: 'Mockups',
-    }
+    },
+    // {
+    //   name: 'Wireframes',
+    //   images: [
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/Appetiser-Apps-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/Artisan-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/BrainHub-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/codeq-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/Codigodelsur-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/createIT-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/data-art-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/Default-value-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/divante-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/GojiLabs-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/GRUPA-KMK-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/LINGARO-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/memory-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/Momentum-IO-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/netalico-commerce-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/Pinnacle-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/pixelplex-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/softatek-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/SpaceDev-min.jpg' },
+    //     { id: 1,projectName:'Soda-Digital',thumbnailImage:'portfolio/wireframes/soda-digital-thumbnail.jpg', path: 'portfolio/wireframes/Sun-o-group-min.jpg' },
+
+    //   ],
+    //   categoryHeading: 'Wireframes',
+    // }
   ];
 
   currentCategory: any = this.categories[0];
@@ -82,6 +109,10 @@ export class UIUXComponent implements OnInit {
          history.pushState(null, '', url);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
+          element.classList.add('active');
+          setTimeout(() => {
+            element.classList.remove('active');
+          }, 2000);
         }
       }
     });

@@ -25,5 +25,10 @@ export class MainViewComponent implements OnInit {
     this.currentBackgroundIndex = (this.currentBackgroundIndex + 1) % this.backgroundImages.length;
   }
 
-
+  preloadImages(): void {
+    this.backgroundImages.forEach(imageUrl => {
+      const img = new Image();
+      img.src = imageUrl;
+    });
+  }
 }
