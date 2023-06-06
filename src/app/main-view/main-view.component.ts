@@ -21,14 +21,18 @@ export class MainViewComponent implements OnInit {
       this.changeBackground();
     }, 3000);
   }
+  
   changeBackground(): void {
     this.currentBackgroundIndex = (this.currentBackgroundIndex + 1) % this.backgroundImages.length;
   }
 
-  preloadImages(): void {
-    this.backgroundImages.forEach(imageUrl => {
-      const img = new Image();
-      img.src = imageUrl;
+  parallax(event: MouseEvent): void {
+    const layers = document.querySelectorAll('.shapes .circles') as NodeListOf<HTMLElement>;
+    layers.forEach(layer => {
+      const speed = +layer.getAttribute('data-speed')!;
+      const x = (window.innerWidth - event.pageX * speed*3) / 100;
+      const y = (window.innerHeight - event.pageY * speed*3) / 100;
+      layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
     });
   }
 }
