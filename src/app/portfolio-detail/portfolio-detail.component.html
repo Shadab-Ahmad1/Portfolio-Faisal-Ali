@@ -5,11 +5,8 @@
     </button>
     <h1>Portfolio</h1>
   </div>
-  <div class="portfolio-details-hero" *ngIf="detailImages">
-    <img [src]="'assets/img/' + bgImage" alt="portfolio" />
-  </div>
-  <ng-container *ngIf="selected && !detailImages">
-    <div [ngClass]="{'increase-length': selectedCategory === 'Category1','change-width': selected && selected.selectedCategory && selected.selectedCategory.categoryHeading === 'Social Media Posts'}"  class="portfolio-single-preview-image">
+  <ng-container *ngIf="selected">
+    <div [ngClass]="{'increase-length': selectedCategory === 'Category1'}"  class="portfolio-single-preview-image">
       <img class="image-slider" *ngFor="let image of selected.category  let i = index" 
       [ngStyle]="{ display: currentImageIndex === i ? 'block' : 'none' }"  src="{{ 'assets/img/' + image.path }}" />
       
