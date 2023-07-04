@@ -47,6 +47,9 @@
             img{
               width: 32px;
             }
+            span{
+              width: 100%;
+            }
           }
         }
       }
@@ -54,6 +57,16 @@
   }
   .about-work-process-whole-wrapper {
     .about-work-process-container {
+      margin-top: 45px;
+      .work-process-title{
+        h2{
+          color: #FF424E;
+          text-align: center;
+          font-size: 48px;
+          font-weight: 500;
+          line-height: normal;
+        }
+      }
       .work-process-image{
         img{
           width: 100%;
