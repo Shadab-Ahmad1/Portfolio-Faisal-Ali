@@ -74,65 +74,56 @@
       }
     }
   }
-  .tools-whole-wrapper{
-    margin-top: 1rem;
-    width: 56vw;
-    margin-left: auto;
-    margin-right: auto;
-    .tools-container{
-      display: flex;
-      justify-content: space-between;
-      gap: 50px;
-      .tools-column{
-        width: 50%;
-        .column-heading{
-          font-weight: 700;
-          font-size: 25px;
-          line-height: 34px;
+  .user-skills-whole-wrapper {
+    margin-top: 40px;
+    .work-process-title{
+      h2{
+        color: #FF424E;
+        text-align: center;
+        font-size: 48px;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+    .user-profile-skills-progressbar-wrapper {
+      margin: 10px;
+
+      .profile-skills-lists {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2px;
+
+        .profile-skill-name {
           color: #585858;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 250%;
+          text-transform: uppercase;
         }
-        .tools-list-wrapper{
-          .tools-list{
-            margin: 0;
-            padding: 0;
-            padding-left: 21px;
-            margin-top: 10px;
-            font-weight: 500;
-            font-size: 1vw;
-            line-height: 1.7vw;
-            color: #62A2B6;
-          }
+
+        .profile-skill-percentage {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0px;
+          line-height: 20px;
+          color: #878789;
         }
-        .current-organization{
-          .exp-lists{
-            list-style: none;
-            li{
-              .experience-date{
-                color: #3E3B3B;
-                font-size: 1vw;
-                font-weight: 500;
-              }
-            }
-          }
-          .list-item{
-            color: #62A2B6;
-            font-size: 1vw;
-            font-weight: 600;
-          }
-          .company-name{
-            color:#3E3B3B;
-            font-weight: 700;
-            font-size: 0.9vw;
-          }
-          svg{
-            margin-left: -35px;
-            padding-right: 20px;
-            width: 0.9vw;
-          }
+      }
+
+      .profile-skills-progress {
+        height: 15px !important;
+        background-color: #c6c6c600;
+        border-radius: 0px !important;
+        margin-bottom: 13px !important;
+
+        .progress-bar {
+          border-radius: 7.5px;
+          background: #FF7881;
+          height: 100%;
         }
       }
     }
-  }  
+  }
 }
 @media (max-width: 850px) {
   .about-cards{
