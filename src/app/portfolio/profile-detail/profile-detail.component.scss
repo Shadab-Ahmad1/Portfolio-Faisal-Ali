@@ -73,6 +73,8 @@
 @media (max-width:700px) {
   .user-profile-detail {
     height: auto;
+    border-radius: 0 !important;
+    overflow-y: hidden !important;
   }
 }
 
