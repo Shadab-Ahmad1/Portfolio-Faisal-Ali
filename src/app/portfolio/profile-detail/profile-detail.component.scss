@@ -74,7 +74,8 @@
   .user-profile-detail {
     height: auto;
     border-radius: 0 !important;
-    overflow-y: hidden !important;
+    overflow: hidden !important;
+    width: 100%;
   }
 }
 
