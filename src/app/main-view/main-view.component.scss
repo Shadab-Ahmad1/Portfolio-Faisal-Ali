@@ -47,7 +47,7 @@
               margin-top: -7px;
               span{
                 font-size: 11px;
-                color: #786E6E;
+                color: #FF424E;
                 font-weight: 500;
               }
             }
@@ -109,20 +109,21 @@
           .user-profile-detail-navbar{
             .user-profile-detail-nav-links {
               list-style: none;
-              padding-left: 2.5rem;
+              padding-left: 0;
+              text-align: center;
               li {
-                padding-bottom: 20px;
+                padding-bottom: 30px;
                 a {
                   text-decoration: none;
                   color: #3C3C3C;
-                  font-size: 20px;
+                  font-size: 18px;
                   font-weight: 600;
                   text-transform: uppercase;
                   &.active{
-                    color: #FF424E;
-                    // background-color: #FF424E;
-                    // padding: 10px 15px;
-                    // border-radius: 28px;
+                    color: #fff;
+                    background-color: #FF424E;
+                    padding: 8px 30px;
+                    border-radius: 28px;
                   }
                 }
               }
