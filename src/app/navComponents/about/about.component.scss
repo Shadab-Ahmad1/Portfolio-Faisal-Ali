@@ -124,6 +124,44 @@
       }
     }
   }
+  .tools-whole-wrapper{
+    margin-top: 50px;
+    .tools-title{
+      h2{
+        color: #FF424E;
+        text-align: center;
+        font-size: 45px;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+    .tools-container{
+      .tools-list-wrapper{
+        text-align: center;
+        .tools-list{
+          list-style: none;
+          padding-left: 0;
+          margin: 0;
+          li{
+            color: #585858;
+            font-size: 32px;
+            font-weight: 700;
+            position: relative;
+            padding-top: 15px;
+            &:after{
+              content: url('/assets/img/underline.png');
+              position: absolute;
+              top: 36px;
+              left: 75px;
+            }
+            &:last-child::after{
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 @media (max-width: 850px) {
   .about-cards{
