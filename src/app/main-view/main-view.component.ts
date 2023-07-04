@@ -41,9 +41,7 @@ export class MainViewComponent implements OnInit {
     this.isOpenProfile = !this.isOpenProfile;
   }
   checkViewport() {
-    this.isDesktop = window.innerWidth >= 1024; // Adjust the breakpoint as per your design
-    
-    // Additional logic or adjustments based on the viewport width can be implemented here
+    this.isDesktop = window.innerWidth >= 700;
   }
 
 }

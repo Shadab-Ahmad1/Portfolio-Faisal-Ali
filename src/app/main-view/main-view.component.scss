@@ -1,6 +1,7 @@
 .main {
   height: 100vh;
   background: linear-gradient(135deg, #FFC3C7 0%, #C5E5FE 100%);
+  overflow-x: hidden;
   .portfolio-section-bg {
     position: relative; 
     .navbar-mobile{
