@@ -150,7 +150,7 @@
   @media (max-width:700px){
     .portfolio{
       h1{
-        font-size: 20px !important;
+        font-size: 25px !important;
       }
     }
     .portfolio__gallery{
@@ -160,11 +160,15 @@
       .portfolio__gallery--item{
         width: 100% !important;
         .gallery-image{
+          height: 254px;
           img{
             width: 100%;
           }
         }
       }
     }
+    .portfolio__nav {
+      margin-bottom: 1.4rem;
+    }  
   }
   
