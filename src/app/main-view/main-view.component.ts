@@ -1,5 +1,6 @@
-import { Component, OnInit ,ViewChild} from '@angular/core';
-
+import { Component, HostListener, OnInit , } from '@angular/core';
+import { Router,NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-main-view',
   templateUrl: './main-view.component.html',
@@ -7,32 +8,42 @@ import { Component, OnInit ,ViewChild} from '@angular/core';
 })
 export class MainViewComponent implements OnInit {
 
-  backgroundImages: string[] = [
-    'url(/assets/img/Texture-1.jpg)',
-    'url(/assets/img/Texture-2.jpg)',
-    'url(/assets/img/Texture-3.jpg)'
-  ];
-    currentBackgroundIndex: number = 0;
-
-  constructor() { }
-
-  ngOnInit(): void {
-    setInterval(() => {
-      this.changeBackground();
-    }, 3000);
-  }
+  isDesktop: boolean = true; // Flag to track if the current view is desktop
   
-  changeBackground(): void {
-    this.currentBackgroundIndex = (this.currentBackgroundIndex + 1) % this.backgroundImages.length;
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: Event) {
+    this.checkViewport();
+  }
+  isOpen = false;
+  isOpenProfile = false;
+  activeRoute: string | undefined;
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    this.router.events
+      .pipe(filter((event:any) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.setActiveRoute(event.urlAfterRedirects);
+      });
+      this.checkViewport();
+  }
+  setActiveRoute(url: string) { 
+      this.activeRoute = url.slice(1);
+  }
+  isPortfolioActive(): boolean {
+    const currentUrl = this.router.url;
+    return currentUrl.includes('portfolio') || currentUrl.includes('UI/UX') || currentUrl.includes('portfolioDetails');
+  }
+  toggleSidebar() {
+    this.isOpen = !this.isOpen;
+  }
+  toggleProfileSidebar() {
+    this.isOpenProfile = !this.isOpenProfile;
+  }
+  checkViewport() {
+    this.isDesktop = window.innerWidth >= 1024; // Adjust the breakpoint as per your design
+    
+    // Additional logic or adjustments based on the viewport width can be implemented here
   }
 
-  parallax(event: MouseEvent): void {
-    const layers = document.querySelectorAll('.shapes .circles') as NodeListOf<HTMLElement>;
-    layers.forEach(layer => {
-      const speed = +layer.getAttribute('data-speed')!;
-      const x = (window.innerWidth - event.pageX * speed*3) / 100;
-      const y = (window.innerHeight - event.pageY * speed*3) / 100;
-      layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
-    });
-  }
 }

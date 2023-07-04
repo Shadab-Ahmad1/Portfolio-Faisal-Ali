@@ -19,6 +19,7 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import { UIUXComponent } from './navComponents/ui-ux/ui-ux.component';
 import { GraphicDesigningComponent } from './navComponents/graphic-designing/graphic-designing.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { FormsModule } from '@angular/forms';
     NgProgressModule,
     NgCircleProgressModule.forRoot(),
     NgbModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [{provide: LocationStrategy, useClass:HashLocationStrategy}],
   bootstrap: [AppComponent],

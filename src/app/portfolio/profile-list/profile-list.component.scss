@@ -4,9 +4,8 @@
   backdrop-filter: blur(35px);
   border-radius: 14px;
   padding: 15px 15px;
-  height: calc(100vh - 400px);
+  height: calc(45vh - 23px);
   overflow-y: scroll;
-
   &.overflow::-webkit-scrollbar {
     width: 8px;
     height: 10px;
@@ -241,7 +240,82 @@
     }
   }
 }
+.portfolio-about-user-left{
+  height: calc(100vh - 370px);
+  overflow-y: scroll;
+  border-radius: 14px;
+  background: linear-gradient(316deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.18) 100%);
+  box-shadow: 2px 4px 30px 0px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(35px);
+  &.overflow::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+  }
 
+  &.overflow::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &.overflow::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+  }
+
+  &.overflow:hover::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+  }
+
+  &.overflow::-webkit-scrollbar-thumb:hover {
+    background: #c7c7c7;
+  }
+
+  .about-user-left-whole-wrapper{
+    padding: 1.5vw 3vw 1vw 2vw;
+    .user-profile-list-info{
+      .user-profile-info-wrapper{
+        border-bottom: 1px solid #585858;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        .city{
+          color: #585858;
+          font-size: 0.7vw;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+        .state{
+          padding-right: 1vw;
+          color: #3E3B3B;
+          font-size: 0.7vw;
+          text-transform: uppercase;
+          padding-bottom: 0.35vw;
+          display: flex;
+          justify-content: flex-start;
+          width: 18%;
+        }
+      }
+    }
+    .skills-row{
+      border-bottom: 1px solid #585858;
+      margin-bottom: 5px;
+      span{
+        color: #585858;
+        font-size: 0.66vw;
+        font-family: Poppins;
+        font-weight: 600;
+        line-height: 264%;
+        text-transform: uppercase;
+      }
+    }
+    .skills-heading{
+      h4{
+        color: #FF424E;
+        font-size: 1.3vw;
+        font-family: Poppins;
+        font-weight: 700;
+      }
+    }
+  }
+}
 @media (max-width:1200px) {
   .user-profile-list-tools-wrapper{
     .user-profile-list-tools-container{

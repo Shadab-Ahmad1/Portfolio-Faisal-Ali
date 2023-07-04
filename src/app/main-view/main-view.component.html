@@ -1,54 +1,290 @@
-<div class="main" [style.background-image]="backgroundImages[currentBackgroundIndex]" (mousemove)="parallax($event)">
-    <div class="portfolio-section-bg" id="portfolio-section-bg">
-        <!-- <div class="shapes">
-          <div class="circles" id="circle1" data-speed="5"></div>
-          <div class="circles" id="circle2" data-speed="-5"></div>
-          <div class="circles" id="circle3" data-speed="2"></div>
-          <div class="circles" id="circle4" data-speed="8"></div>
-          <div class="circles" id="circle5" data-speed="5"></div>
-          <div class="circles" id="circle6" data-speed="9"></div>
-          <div class="circles" id="circle7" data-speed="4"></div>
-          <div class="circles" id="circle8" data-speed="6"></div>
-
-        </div> -->
-        <!-- <div class="card">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="card-inner"></div>
-      </div> -->
-        <div class="porfolio-section-wrapper" id="porfolio-section-wrapper">
-          <div class="porfolio-section-list" id="porfolio-section-list">
-            <app-profile></app-profile>
-            <app-profile-list></app-profile-list>
-          </div>
-          <div class="porfolio-section-detail" id="porfolio-section-detail">
-            <app-profile-detail></app-profile-detail>
-          </div>
-          <ng-container>
-            <div class="user-profile-detail-navbar-mobile">
-              <ul class="user-profile-detail-nav-links">
-                <li>
-                  <a routerLink="about" href="" [routerLinkActive]="'active'">About</a>
-                </li>
-                <li>
-                  <a routerLink="resume" href="" [routerLinkActive]="'active'"
-                    >Resume</a
-                  >
-                </li>
-                <li>
-                  <a routerLink="UI/UX" href="" [routerLinkActive]="'active'"
-                    >Portfolio</a
-                  >
-                </li>
-                <li>
-                  <a routerLink="contact" href="" [routerLinkActive]="'active'"
-                    >Contact</a
-                  >
-                </li>
-              </ul>
+<div class="main">
+  <div class="portfolio-section-bg" id="portfolio-section-bg">
+    <!-- Navigation Menu For Mobile View With Sidebar -->
+    <div class="navbar-mobile">
+          <div class="user-whole-profile-wrapper">
+            <div class="user-profile-wrapper">
+              <div class="user-profile-icon" [ngClass]="{'open': isOpenProfile}" (click)="toggleProfileSidebar()">
+                <img *ngIf="!isOpenProfile" src="assets/img/main-avatar.png" alt="">
+                <i *ngIf="isOpenProfile" class="material-icons">close</i>
+              </div>            
+              <div class="user-profile-title">
+                <div class="user-profile-name">
+                  <span>Faisal Ali</span>
+                </div>
+                <div class="user-profile-role">
+                  <span>Senior UI/UX Designer</span>
+                </div>
+              </div>
             </div>
-          </ng-container>
+            <div class="user-toggle-menu-wrapper">
+              <div class="active-router">
+                <p>{{activeRoute}}</p>
+              </div>
+              <div class="toggle-menu-button">
+                <button class="menu-button"  (click)="toggleSidebar()">
+                  <i class="material-icons">{{ isOpen ? "close" : "menu" }}</i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-mobile" [ngClass]="{ 'open': isOpen, 'opened-sidebar': isOpen }">
+            <div class="menu-type">
+              <span>MENU</span>
+            </div>
+            <div class="mobile-navigation-menu">
+              <div class="user-profile-detail-navbar">
+                <ul class="user-profile-detail-nav-links">
+                  <li>
+                    <a routerLink="about" (click)="toggleSidebar()" [routerLinkActive]="'active'">About</a>
+                  </li>
+                  <li>
+                    <a routerLink="resume" (click)="toggleSidebar()" [routerLinkActive]="'active'">Resume</a>
+                  </li>
+                  <li>
+                    <a (click)="toggleSidebar()"
+                      routerLink="portfolio"
+                      [ngClass]="{ active: isPortfolioActive() }"
+                    >
+                      Portfolio
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="toggleSidebar()" routerLink="contact" [routerLinkActive]="'active'">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="sidebar-footer">
+              <div class="social-icons" [ngClass]="{'open': isOpen}">
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a
+                  href="https://twitter.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-profile"  [ngClass]="{ 'open': isOpenProfile, 'opened-sidebar': isOpenProfile }">
+            <div class="user-profile-list">
+              <div class="user-profile-wrapper">
+                <div class="profile-img">
+                  <img src="assets/img/contact-avatar.png" alt="" />
+                </div>
+                <div class="user-details">
+                  <h3 class="user-name">Komal Ali</h3>
+                  <span class="user-role">Senior UI/UX Designer</span>
+                  <img
+                    class="adobe-certificate"
+                    src="assets/img/adobe-certified.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="contact-details-icons-whole-wrapper">
+                <div class="contact-details-social-icons">
+                  <div class="icon-background">
+                    <img src="/assets/img/location-icon.svg" alt="location" />
+                  </div>
+                  <p>United, Kingdom</p>
+                </div>
+                <div class="contact-details-social-icons">
+                  <div class="icon-background">
+                    <img src="/assets/img/phone-icon.svg" alt="phone" />
+                  </div>
+                  <a href="tel:+447853442227">+44 7853 442227</a>
+                </div>
+                <div class="contact-details-social-icons">
+                  <div class="icon-background">
+                    <img src="/assets/img/linkedin-icon.svg" alt="linkedin" />
+                  </div>
+                  <a href="https://www.linkedin.com/in/komal-ali-46678a276/">Komal Ali</a>
+                </div>
+                <div class="contact-details-social-icons">
+                  <div class="icon-background">
+                    <img
+                      src="/assets/img/mail-icon.svg"
+                      style="margin-left: -3px"
+                      alt="email"
+                    />
+                  </div>
+                  <a href="mailto:komalali.jhangiani@gmail.com">komalali.ux@gmail.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!-- Navigation Menu For Desktop View-->
+    <div class="navigation-menu">
+      <div class="user-profile-detail-title">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="user-profile-detail-navbar">
+        <ul class="user-profile-detail-nav-links">
+          <li>
+            <a routerLink="about" [routerLinkActive]="'active'">About</a>
+          </li>
+          <li>
+            <a routerLink="resume" [routerLinkActive]="'active'">Resume</a>
+          </li>
+          <li>
+            <a routerLink="UI/UX" [ngClass]="{'active': isPortfolioActive() }">
+              Portfolio
+            </a>
+          </li>
+          <li>
+            <a routerLink="contact" [routerLinkActive]="'active'">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Floading Circles Shapes on background -->
+    <div style="display: none" class="card">
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <!-- Check if the active route is equal to about -->
+    <div *ngIf="activeRoute === 'about' && isDesktop" class="porfolio-about-section-wrapper">
+      <div class="porfolio-section-list" id="porfolio-section-list">
+        <div class="profile-content">
+          <div class="about-me">
+            <div class="image">
+              <img src="assets/img/pointer.png" alt="" />
+            </div>
+            <div class="content">
+              <div class="content-wrapper">
+                <h2>Hey there! <span>I’m Faisal</span></h2>
+                <div class="role">
+                  <span>Senior UI/UX Designer</span>
+                </div>
+                <div class="paragrapgh">
+                  <p class="para1">
+                    I am a Seasoned Creative UX & UI and Creative Designer with
+                    over4+ years of experience brining consumer-level usability
+                    to enterprise-level applications.
+                  </p>
+
+                  <p class="para2">
+                    I am having a vast experience with client and stakeholder
+                    relationships, along with project management, leadership,
+                    and strategy. Possessing a combination of conceptual
+                    strength and technical proficiency. Established self-starter
+                    and team leader that actively helps and refines all
+                    processes necessary to achieve and maintain goals. My focus
+                    and competencies include creative direction, user interface
+                    design, user experience design, visual design, iOS design,
+                    web design, and graphic design.
+                  </p>
+                </div>
+                <div class="buttons">
+                  <div class="button">Download Resume</div>
+                  <div class="button">Download Resume</div>
+                </div>
+              </div>
+            </div>
+            <div class="second-image">
+              <img src="assets/img/contact-avatar.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="porfolio-section-detail" id="porfolio-section-detail">
+          <div class="portfolio-about-user-left overflow">
+            <div class="about-user-left-whole-wrapper">
+              <div class="user-profile-list-info">
+                <div class="user-profile-info-wrapper">
+                  <span class="city">Residence:</span>
+                  <span class="state">Dallas</span>
+                </div>
+                <div class="user-profile-info-wrapper">
+                  <span class="city">City:</span>
+                  <span class="state">Texas</span>
+                </div>
+                <div class="user-profile-info-wrapper">
+                  <span class="city">Language:</span>
+                  <span class="state">English</span>
+                </div>
+              </div>
+              <div class="skills-heading">
+                <h4>Skills</h4>
+              </div>
+              <div class="user-profile-skills-wrapper">
+                <div class="skills-row">
+                  <span>SEO/SEM</span>
+                </div>
+                <div class="skills-row">
+                  <span>jquery</span>
+                </div>
+                <div class="skills-row">
+                  <span>salesforce</span>
+                </div>
+                <div class="skills-row">
+                  <span>html/css</span>
+                </div>
+                <div class="skills-row">
+                  <span>cms/crm</span>
+                </div>
+                <div class="skills-row">
+                  <span>wordpress/joomla</span>
+                </div>
+              </div>
+              <div class="skills-heading">
+                <h4>Tools</h4>
+              </div>
+              <div class="user-profile-skills-wrapper">
+                <div class="skills-row">
+                  <span>Figma</span>
+                </div>
+                <div class="skills-row">
+                  <span>Sketch</span>
+                </div>
+                <div class="skills-row">
+                  <span>Adobe xd</span>
+                </div>
+                <div class="skills-row">
+                  <span>Invision app</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="content-wrapper">
+              <div class="heading">
+                <h4>My Design Process</h4>
+              </div>
+              <img src="assets/img/design-process.png" alt="" />
+            </div>
+          </div>
         </div>
       </div>
-    
+    </div>
+    <!-- Check if the active route is not equal to about to display other pages-->
+    <div *ngIf="activeRoute !== 'about' && isDesktop"
+      class="porfolio-section-wrapper"
+      id="porfolio-section-wrapper"
+    >
+      <div class="porfolio-section-list" id="porfolio-section-list">
+        <app-profile></app-profile>
+        <app-profile-list></app-profile-list>
+      </div>
+      <div class="porfolio-section-detail" id="porfolio-section-detail">
+        <app-profile-detail></app-profile-detail>
+      </div>
+    </div>
+  </div>
 </div>

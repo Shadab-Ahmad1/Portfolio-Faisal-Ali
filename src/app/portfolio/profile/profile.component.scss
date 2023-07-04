@@ -8,7 +8,7 @@
 
     .user-profile-list {
         .user-profile-wrapper {
-            padding: 20px 20px;
+            padding: 10px 20px;
             text-align: center;
             display: flex;
             gap: 7px;
@@ -20,19 +20,55 @@
                 border-radius: 50%;
                 }
             }
-            .user-details{     
+            .user-details{ 
+                width: 100%;    
             .user-name {
-                color: #000000;
+                color: #585858;
                 margin-bottom: 10px;
+                font-weight: 700;
+                // font-size: 1vw;
             }
             .user-role {
-                color: #fff;
-                font-weight: 400;
-                padding: 3px 6px;
-                background: #0675eb;
+                padding: 7px 18px;
+                color: #FF424E;
+                font-size: 0.8vw;
+                font-weight: 500;
+                border: 1px solid #FF424E;
             }
-            .adobe-certificate{
-                margin-top: 13px;
+            .about-me-text{
+                color: #585858;
+                text-align: center;
+                margin: 0.8vw 0;
+                font-size: 0.85vw;
+                display: none;
+            }
+            .about-me-buttuns-whole-wrapper{
+                margin-top: 15px;
+                .button-wrapper{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 15px;
+                    align-items: center;
+                    border-radius: 6px;
+                    background: #FF424E;
+                    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+                    width: 90%;
+                    margin: auto;
+                    .button-image-wrapper{
+                        width: 25%;
+                        img{
+                            margin-top: 5px;
+                            width: 1.667vw;
+                        }
+                    }
+                    span{
+                        color: #FFF;
+                        text-align: left;
+                        font-size: 0.8vw;
+                        font-weight: 500;
+                        width: 75%;
+                    }
+                }
             }
             }
         }
