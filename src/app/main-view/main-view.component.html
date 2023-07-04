@@ -4,7 +4,7 @@
     <div class="navbar-mobile">
           <div class="user-whole-profile-wrapper">
             <div class="user-profile-wrapper">
-              <div class="user-profile-icon" [ngClass]="{'open': isOpenProfile}" (click)="toggleProfileSidebar()">
+              <div class="user-profile-icon">
                 <img *ngIf="!isOpenProfile" src="assets/img/main-avatar.png" alt="">
                 <i *ngIf="isOpenProfile" class="material-icons">close</i>
               </div>            
@@ -43,7 +43,7 @@
                   </li>
                   <li>
                     <a (click)="toggleSidebar()"
-                      routerLink="portfolio"
+                      routerLink="UI/UX"
                       [ngClass]="{ active: isPortfolioActive() }"
                     >
                       Portfolio
@@ -55,7 +55,7 @@
                 </ul>
               </div>
             </div>
-            <div class="sidebar-footer">
+            <div class="sidebar-footer" style="display: none;">
               <div class="social-icons" [ngClass]="{'open': isOpen}">
                 <a
                   href="https://www.linkedin.com/"
@@ -132,9 +132,9 @@
     </div>
     <!-- Navigation Menu For Desktop View-->
     <div class="navigation-menu">
-      <div class="user-profile-detail-title">
+      <!-- <div class="user-profile-detail-title">
         <router-outlet></router-outlet>
-      </div>
+      </div> -->
       <div class="user-profile-detail-navbar">
         <ul class="user-profile-detail-nav-links">
           <li>
@@ -286,5 +286,17 @@
         <app-profile-detail></app-profile-detail>
       </div>
     </div>
+    <div *ngIf="activeRoute && !isDesktop"
+    class="porfolio-section-wrapper"
+    id="porfolio-section-wrapper"
+  >
+    <div class="porfolio-section-list" id="porfolio-section-list">
+      <app-profile></app-profile>
+      <app-profile-list></app-profile-list>
+    </div>
+    <div class="porfolio-section-detail" id="porfolio-section-detail">
+      <app-profile-detail></app-profile-detail>
+    </div>
+  </div>
   </div>
 </div>

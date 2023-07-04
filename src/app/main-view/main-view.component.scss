@@ -1,6 +1,6 @@
 .main {
   height: 100vh;
-  background: linear-gradient(135deg, #FFC3C7 0%, #C5E5FE 100%);
+  background: linear-gradient(90deg, #FFC3C7 0%, #C5E5FE 100%);
   overflow-x: hidden;
   .portfolio-section-bg {
     position: relative; 
@@ -11,7 +11,7 @@
       width: 100%;
       height: 70px;
       z-index: 999;
-      background: #EBF3F6;
+      background: #FFCDD0;
       .user-whole-profile-wrapper{
         display: flex;
         justify-content: space-between;
@@ -56,25 +56,22 @@
         .user-toggle-menu-wrapper{
           display: flex;
           align-items: center;
-          gap: 10px;
           .active-router{
             font-weight: 400;
             font-size: 16px;
-            color: #62A2B6;
+            color: #FF424E;
             text-transform: uppercase;
           }
           .toggle-menu-button{
-            background: #62A2B6;
             padding: 1px 6px;
-            margin-top: -10px;
             .menu-button{
               border: none;
               background: no-repeat;
               outline: none;
-              padding: 20px 11px;
+              padding: 9px 0px;
               .material-icons{
-                font-size: 24px;
-                color: #fff;
+                font-size: 36px;
+                color: #585858;
                 z-index: 9999;
                 position: relative;
               
@@ -87,7 +84,7 @@
         position: absolute;
         right: -330px;
         top: 0;
-        background: rgba(98, 162, 182, 0.99);
+        background:#fff;
         border-radius: 0px 0px 0px 16px;
         height:calc(100vh - 20px);
         z-index: 999;
@@ -104,7 +101,7 @@
           padding-left: 1rem;
           span{
             font-weight: 400;
-            color: #FFFFFF;
+            color: #FF424E;
           }
         }
         .mobile-navigation-menu{
@@ -112,16 +109,20 @@
           .user-profile-detail-navbar{
             .user-profile-detail-nav-links {
               list-style: none;
-              padding-left: 3.5rem;
+              padding-left: 2.5rem;
               li {
                 padding-bottom: 20px;
                 a {
                   text-decoration: none;
-                  color: #ffffff;
-                  font-weight: 300;
+                  color: #3C3C3C;
+                  font-size: 20px;
+                  font-weight: 600;
+                  text-transform: uppercase;
                   &.active{
-                    color: #000;
-                    font-weight: 500;
+                    color: #FF424E;
+                    // background-color: #FF424E;
+                    // padding: 10px 15px;
+                    // border-radius: 28px;
                   }
                 }
               }
