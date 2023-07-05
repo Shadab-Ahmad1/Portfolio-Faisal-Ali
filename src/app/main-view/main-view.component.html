@@ -286,7 +286,8 @@
         <app-profile-detail></app-profile-detail>
       </div>
     </div>
-    <div *ngIf="activeRoute && !isDesktop"
+    <!-- Check for the mobile view-->
+    <div *ngIf="!isDesktop"
     class="porfolio-section-wrapper"
     id="porfolio-section-wrapper"
   >

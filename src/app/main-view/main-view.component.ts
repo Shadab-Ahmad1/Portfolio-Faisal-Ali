@@ -27,9 +27,14 @@ export class MainViewComponent implements OnInit {
       });
       this.checkViewport();
   }
-  setActiveRoute(url: string) { 
+  setActiveRoute(url: string) {
+    if (url.includes('/portfolioDetails') || url.includes('?selectedItemId')) {
+      this.activeRoute = 'UI/UX';
+    } else {
       this.activeRoute = url.slice(1);
+    }
   }
+  
   isPortfolioActive(): boolean {
     const currentUrl = this.router.url;
     return currentUrl.includes('portfolio') || currentUrl.includes('UI/UX') || currentUrl.includes('portfolioDetails');
