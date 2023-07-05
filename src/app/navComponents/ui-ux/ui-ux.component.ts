@@ -109,7 +109,7 @@ export class UIUXComponent implements OnInit {
          const url = `/#/UI/UX`;
          history.pushState(null, '', url);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: 'auto' });
           element.classList.add('active');
           setTimeout(() => {
             element.classList.remove('active');
