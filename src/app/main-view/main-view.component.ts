@@ -8,7 +8,7 @@ import { filter } from 'rxjs/operators';
 })
 export class MainViewComponent implements OnInit {
 
-  isDesktop: boolean = true; // Flag to track if the current view is desktop
+  isDesktop: boolean = true;
   
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: Event) {
