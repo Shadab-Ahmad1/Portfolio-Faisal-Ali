@@ -14,6 +14,7 @@ export class ProfileDetailComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         const scrollContainer = document.querySelector('.user-profile-detail');
         if (scrollContainer) {
+        console.log(scrollContainer)
           scrollContainer.scrollTop = 0;
         }
       }

@@ -72,9 +72,9 @@
 
 @media (max-width:700px) {
   .user-profile-detail {
-    height: inherit;
+    height: 100vh;
     border-radius: 0 !important;
-    overflow-y: unset;
+    overflow-y: scroll;
     width: 100%;
     background: none !important;
     box-shadow: none !important;
