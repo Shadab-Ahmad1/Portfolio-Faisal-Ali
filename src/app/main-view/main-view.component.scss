@@ -58,7 +58,6 @@
           align-items: center;
           .active-router{
             font-weight: 400;
-            font-size: 16px;
             color: #FF424E;
             text-transform: uppercase;
           }
@@ -294,9 +293,10 @@
       height: 100vh;
       overflow: hidden;
       .circle {
-        width: 150px;
-        height: 150px;
-        background: radial-gradient(#0675EB, #3DADF5);
+        width: 190px;
+        height: 190px;
+        background: linear-gradient(137deg, #FFC3C7 0%, #FF8E96 100%);
+        filter: drop-shadow(0px 0px 20px rgba(128, 0, 0, 0.17));
         border-radius: 50%;
         position: absolute;
         &:nth-child(1) {
@@ -304,8 +304,10 @@
           left: 2%;
         }
         &:nth-child(2) {
-          bottom: 0;
-          right: 1%;
+          bottom: 37%;
+          right: 6%;
+          width: 220px;
+          height: 220px;
         }
       }
     }
