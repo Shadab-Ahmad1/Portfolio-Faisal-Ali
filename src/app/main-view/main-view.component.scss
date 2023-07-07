@@ -396,14 +396,19 @@
                   display: flex;
                   justify-content: center;
                   align-items: center;
-                  gap: 15px;
+                  gap: 35px;
                   margin-top: 13px;
-                  .button{
+                  .visit-portfolio-btn{
                     border-radius: 6px;
                     background: #FF424E;
                     color: #fff;
-                    padding: 0.45vw 0.78vw;
+                    padding: 0.30vw 0.78vw;
                     font-size: 0.8vw;
+                    width: 12.5vw;
+                    display: flex;
+                    align-items: center;
+                    gap: 25px;
+                  cursor: pointer;
                   }
                 }
               }
