@@ -408,7 +408,11 @@
                     display: flex;
                     align-items: center;
                     gap: 25px;
-                  cursor: pointer;
+                    height: 3.5vh;
+                    cursor: pointer;
+                    img{
+                      width: 1.712vw;
+                    }
                   }
                 }
               }
@@ -557,15 +561,32 @@
 
 
 
-// @media (max-width: 1720px) {
-//   .porfolio-section-wrapper {
-//     width: 90% !important;
-
-//     .porfolio-section-list {
-//       width: 22% !important;
-//     }
-//   }
-// }
+@media (max-width: 1680px) {
+  .about-me{
+    .content{
+      .content-wrapper{
+        &::before{
+          left: -225px !important;
+          top: -82px !important;
+          transform: scale(0.48) !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1360px) {
+  .about-me{
+    .content{
+      .content-wrapper{
+        &::before{
+          left: -220px !important;
+          top: -108px !important;
+          transform: scale(0.43) !important;
+        }
+      }
+    }
+  }
+}
 
 @media (max-width:700px) {
   .main {
