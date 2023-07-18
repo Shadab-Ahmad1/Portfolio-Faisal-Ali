@@ -373,11 +373,12 @@
                 }
                 .role{
                   span{
-                    border: 1px solid #FF424E;
                     padding: 7px 24px;
-                    color: #FF424E;
                     text-align: center;
-                    font-size: 0.68vw;
+                    font-size: 1.32vw;
+                    -webkit-text-stroke-width: 1.8px;
+                    -webkit-text-stroke-color: #ff424e;
+                    color: #00000000;
                     font-weight: 500;
                   }
                 }
